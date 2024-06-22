@@ -4,9 +4,10 @@ import './App.css'
 
 import Todo from './components/todo.tsx';
 import TodoForm from './components/TodoForm.tsx';
-
+import Search from './components/search.tsx';
 
 function App() {
+  const [search, setSearch] = useState<string>("")
   const [todos, setTodos] = useState([
     {
       id:1,
@@ -59,13 +60,13 @@ function App() {
 
   return <div className='app'>
     <h1>Lista de Tarefas</h1>
-    
+    <Search search={search} setSearch={setSearch} />
     <div className="todo-list">
       {todos.map((todo) => (
-        <Todo key={todo.id} todo={todo} removeTodo={removeTodo} completeTodo={completeTodo}/>
+        <Todo key={todo.id} todo={todo} removeTodo={removeTodo} completeTodo={completeTodo} />
       ))}
     </div>
-    <TodoForm addTodo={addTodo}/>
+    <TodoForm addTodo={addTodo} />
   </div>
  
 }

@@ -4,21 +4,9 @@ export type TodoProps = {
       text: string;
       category: string;
       isCompleted: boolean;
-    }
-
-    removeTodo: {
-      id: number;
-      text: string;
-      category: string;
-      isCompleted: boolean;
-    }
-
-    completeTodo: {
-      id: number;
-      text: string;
-      category: string;
-      isCompleted: boolean;
-    }
+    },
+    completeTodo(id: number): void,
+    removeTodo(id: number): void
 }
 
 

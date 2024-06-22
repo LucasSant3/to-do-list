@@ -1,4 +1,9 @@
-const Search = ({search, setSearch}) => {
+type SearchProps = {
+  search: string,
+  setSearch(search: string): void
+}
+
+const Search = ({search, setSearch}: SearchProps) => {
   return (
   <div className="search">
     <h2>Pesquisar</h2>
@@ -10,3 +15,5 @@ const Search = ({search, setSearch}) => {
   </div>
   )
 }
+
+export default Search
